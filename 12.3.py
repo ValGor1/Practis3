@@ -1,0 +1,13 @@
+NAME = str(input("Имя игрока?: "))
+ATT = float(input("Введите ATT: "))
+COMP = float(input("Введите COMP: "))
+YDS = float(input("Введите YDS: "))
+TD = float(input("Введите TD: "))
+INT = float(input("Введите INT: "))
+def Rating(ATT, COMP, YDS, TD, INT):
+    a = (((COMP/ATT)-0.3) * 5)
+    b = (((YDS/ATT)-3) * 0.25)
+    c = ((TD/ATT) * 20)
+    d = (2.375 - ((INT/ATT) * 25))
+    return round(((a + b + c + d) / 6) * 100, 1)
+print(NAME, (" Passer rating: "), Rating(ATT, COMP, YDS, TD, INT))
